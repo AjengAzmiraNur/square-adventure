@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     student_password_secret: str = ""
     student_email_domain: str = "siswa.squareadventure.id"
 
-    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173,capacitor://localhost,http://localhost,https://localhost"
+    cors_origins: str = "https://ajengazmiranur.github.io,http://localhost:5173,http://127.0.0.1:5173,http://localhost:8000,capacitor://localhost,http://localhost,https://localhost"
     login_rate_limit_per_minute: int = 10
 
     @property

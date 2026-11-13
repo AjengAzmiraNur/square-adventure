@@ -20,8 +20,10 @@ const stored = typeof localStorage !== 'undefined' ? readStored() : {}
  *  (port 5173) atau di aplikasi Android, pakai localhost:8000 sampai diatur. */
 function defaultApiUrl() {
   if (typeof window === 'undefined') return 'http://localhost:8000'
-  const { protocol, port, origin } = window.location
+  const { protocol, port, origin, hostname } = window.location
   const native = Boolean(window.Capacitor?.isNativePlatform?.())
+  // GitHub Pages hanya menyajikan tampilan; backend harus diatur di Pengaturan Server.
+  if (hostname.endsWith('github.io')) return ''
   if (!native && /^https?:$/.test(protocol) && port !== '5173') return origin
   return 'http://localhost:8000'
 }
@@ -40,6 +42,8 @@ export function validateServerConfig({ supabaseUrl, supabaseAnonKey, apiUrl }) {
   if (!supabaseAnonKey || supabaseAnonKey.length < 20) return 'Anon key Supabase belum diisi dengan benar.'
   if (/service_role|sb_secret_/i.test(supabaseAnonKey)) return 'Jangan memakai service role / secret key di aplikasi. Gunakan anon / publishable key.'
   if (!isUrl(apiUrl)) return 'Alamat backend harus diawali http:// atau https:// (contoh: http://192.168.1.10:8000).'
+  if (typeof window !== 'undefined' && window.location.protocol === 'https:' && /^http:\/\//i.test(apiUrl))
+    return 'Halaman ini memakai HTTPS, jadi alamat backend juga harus HTTPS (mis. https://square-adventure-api.onrender.com). Backend http:// di laptop hanya bisa dipakai dari http://localhost:8000 atau aplikasi Android.'
   return ''
 }
 

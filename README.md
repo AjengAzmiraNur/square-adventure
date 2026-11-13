@@ -2,6 +2,14 @@
 
 **Explore the Pattern, Discover the Square!**
 
+| | Link |
+|---|---|
+| 🌐 Web aplikasi | **https://ajengazmiranur.github.io/square-adventure/** |
+| 📱 APK Android | https://github.com/AjengAzmiraNur/square-adventure/releases/latest |
+| 💻 Kode sumber | https://github.com/AjengAzmiraNur/square-adventure |
+
+Web aplikasi diperbarui otomatis oleh GitHub Actions setiap ada commit ke `main` (lihat `.github/workflows/deploy-pages.yml`). Agar bisa login dari web, backend FastAPI perlu berjalan di alamat **HTTPS** (mis. Render.com memakai `render.yaml` di repo ini), lalu alamatnya diisi di *Pengaturan Server* pada halaman masuk. Lihat bagian [Deploy backend](#7-deploy-backend-https-rendercom).
+
 SQUARE ADVENTURE adalah aplikasi pembelajaran matematika berbasis permainan untuk siswa SMP dengan materi **Pola Bilangan Persegi**. Siswa berperan sebagai petualang yang menjelajahi empat wilayah — Lembah Kotak, Hutan Pola, Gua Rumus, dan Puncak Tantangan — lalu menaklukkan Kastel Persegi (evaluasi akhir), ditemani karakter pemandu **Kubi**.
 
 Desain penyajiannya didasarkan pada hasil wawancara Cognitive Load (lihat [docs/COGNITIVE_LOAD.md](docs/COGNITIVE_LOAD.md)).
@@ -194,6 +202,17 @@ cd android && gradlew assembleDebug   # hasil: android/app/build/outputs/apk/deb
 ```
 
 Untuk rilis Play Store gunakan **Build → Generate Signed App Bundle** di Android Studio.
+
+### 7. Deploy backend HTTPS (Render.com)
+
+Web di GitHub Pages memakai HTTPS, sehingga backend juga harus HTTPS.
+
+1. Masuk ke <https://render.com> dengan akun GitHub → **New → Blueprint** → pilih repo `square-adventure`.
+2. Render membaca `render.yaml`. Isi `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, dan `STUDENT_PASSWORD_SECRET` (sama persis dengan `backend/.env` di laptop agar akun siswa tetap bisa login).
+3. Setelah aktif, buka `https://<nama-service>.onrender.com/api/health` → `"configured": true`.
+4. Buka web aplikasi → *Pengaturan Server* → isi alamat backend `https://<nama-service>.onrender.com` → **Tes koneksi** → **Simpan**.
+
+> Paket gratis Render "tertidur" saat tidak dipakai; permintaan pertama bisa butuh ±1 menit.
 
 ## Pengujian
 
