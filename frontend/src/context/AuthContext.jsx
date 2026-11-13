@@ -1,6 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { api } from '../lib/api'
 import { isSupabaseConfigured, supabase } from '../lib/supabase'
+import { getMode, setMode } from '../lib/mode'
+import { createGuest, guestProfile } from '../lib/guest/engine'
 
 const AuthContext = createContext(null)
 
@@ -14,13 +16,16 @@ async function fetchProfile(userId) {
   return data
 }
 
+const guestSession = (p) => ({ guest: true, user: { id: p.id } })
+
 export function AuthProvider({ children }) {
-  const [session, setSession] = useState(null)
-  const [profile, setProfile] = useState(null)
-  const [loading, setLoading] = useState(isSupabaseConfigured)
+  const initialGuest = getMode() === 'guest' ? guestProfile() : null
+  const [session, setSession] = useState(initialGuest ? guestSession(initialGuest) : null)
+  const [profile, setProfile] = useState(initialGuest)
+  const [loading, setLoading] = useState(!initialGuest && isSupabaseConfigured)
 
   useEffect(() => {
-    if (!isSupabaseConfigured) return undefined
+    if (initialGuest || !isSupabaseConfigured) return undefined
     let active = true
 
     supabase.auth.getSession().then(async ({ data }) => {
@@ -37,6 +42,7 @@ export function AuthProvider({ children }) {
     })
 
     const { data: sub } = supabase.auth.onAuthStateChange((_event, next) => {
+      if (getMode() === 'guest') return
       setSession(next)
       if (!next) setProfile(null)
     })
@@ -44,9 +50,12 @@ export function AuthProvider({ children }) {
       active = false
       sub.subscription.unsubscribe()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  /** Login kode siswa (akun Supabase sungguhan). */
   const login = useCallback(async (code) => {
+    setMode('account')
     const result = await api('/api/auth/login', { body: { code }, auth: false })
     const { data, error } = await supabase.auth.setSession({
       access_token: result.access_token,
@@ -58,15 +67,29 @@ export function AuthProvider({ children }) {
     return result.profile
   }, [])
 
+  /** Mode Tamu: tanpa server, progres disimpan di perangkat ini. */
+  const loginGuest = useCallback((name) => {
+    const p = createGuest(name)
+    setMode('guest')
+    setSession(guestSession(p))
+    setProfile(p)
+    return p
+  }, [])
+
   const logout = useCallback(async () => {
-    await supabase?.auth.signOut()
+    if (getMode() === 'guest') {
+      setMode(null) // data tamu tetap tersimpan; bisa dilanjutkan lagi
+    } else {
+      await supabase?.auth.signOut()
+      setMode(null)
+    }
     setSession(null)
     setProfile(null)
   }, [])
 
   const value = useMemo(
-    () => ({ session, profile, loading, login, logout, configured: isSupabaseConfigured }),
-    [session, profile, loading, login, logout],
+    () => ({ session, profile, loading, login, loginGuest, logout, configured: isSupabaseConfigured, isGuest: Boolean(profile?.guest) }),
+    [session, profile, loading, login, loginGuest, logout],
   )
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

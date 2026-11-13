@@ -65,10 +65,16 @@ export default function Dashboard() {
         <div>
           <p className="label-eyebrow text-sun">{greeting()}</p>
           <h1 className="mt-1 text-3xl font-bold sm:text-4xl">Halo, {profile.full_name.split(' ')[0]}!</h1>
-          <p className="mt-1 text-white/70">
-            Kode siswa <span className="font-bold text-white">{profile.student_code}</span>
-            {profile.class_name ? ` · Kelas ${profile.class_name}` : ''}
-          </p>
+          {profile.guest ? (
+            <p className="mt-1 text-white/70">
+              <span className="chip bg-sun/20 text-sun">Mode Tamu</span> Progres tersimpan di perangkat ini.
+            </p>
+          ) : (
+            <p className="mt-1 text-white/70">
+              Kode siswa <span className="font-bold text-white">{profile.student_code}</span>
+              {profile.class_name ? ` · Kelas ${profile.class_name}` : ''}
+            </p>
+          )}
           <div className="mt-5 rounded-2xl bg-snow p-4 text-ink">
             <Kubi mood="happy" size={60}>
               <p className="text-royal">Rekomendasi misi:</p>

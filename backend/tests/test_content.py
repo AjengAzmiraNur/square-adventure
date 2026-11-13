@@ -83,3 +83,13 @@ def test_question_counts():
     assert len(QUESTIONS_BY_QUIZ["training-intermediate"]) == 12
     assert len(QUESTIONS_BY_QUIZ["training-expert"]) == 12
     assert len(QUESTIONS_BY_QUIZ["final-challenge"]) >= 20
+
+
+def test_guest_mode_content_json_in_sync():
+    """frontend/src/content/generated/content.json harus sama dengan bank soal Python."""
+    import json
+
+    from scripts.export_content import OUT, build
+
+    assert json.loads(OUT.read_text(encoding="utf-8")) == json.loads(json.dumps(build(), ensure_ascii=False)), \
+        "Jalankan: python -m scripts.export_content"

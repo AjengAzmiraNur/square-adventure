@@ -1,0 +1,2033 @@
+{
+ "lessons": [
+  {
+   "id": "kenali-polanya",
+   "slug": "kenali-polanya",
+   "level": 1,
+   "title": "Kenali Polanya",
+   "topic": "Mengenal Pola Bilangan Persegi",
+   "xp_reward": 50
+  },
+  {
+   "id": "lengkapi-pola",
+   "slug": "lengkapi-pola",
+   "level": 2,
+   "title": "Lengkapi Pola",
+   "topic": "Menentukan Suku Berikutnya",
+   "xp_reward": 50
+  },
+  {
+   "id": "temukan-rumus",
+   "slug": "temukan-rumus",
+   "level": 3,
+   "title": "Temukan Rumus",
+   "topic": "Rumus Pola Bilangan Persegi",
+   "xp_reward": 50
+  },
+  {
+   "id": "tantangan-matematika",
+   "slug": "tantangan-matematika",
+   "level": 4,
+   "title": "Tantangan Matematika",
+   "topic": "Penerapan Pola Bilangan Persegi",
+   "xp_reward": 50
+  }
+ ],
+ "quizzes": [
+  {
+   "id": "lesson-1-check",
+   "slug": "lesson-1-check",
+   "kind": "lesson_check",
+   "title": "Latihan Singkat Level 01",
+   "difficulty": "beginner",
+   "lesson_slug": "kenali-polanya",
+   "default_count": 3
+  },
+  {
+   "id": "lesson-2-check",
+   "slug": "lesson-2-check",
+   "kind": "lesson_check",
+   "title": "Latihan Singkat Level 02",
+   "difficulty": "intermediate",
+   "lesson_slug": "lengkapi-pola",
+   "default_count": 3
+  },
+  {
+   "id": "lesson-3-check",
+   "slug": "lesson-3-check",
+   "kind": "lesson_check",
+   "title": "Latihan Singkat Level 03",
+   "difficulty": "expert",
+   "lesson_slug": "temukan-rumus",
+   "default_count": 3
+  },
+  {
+   "id": "lesson-4-check",
+   "slug": "lesson-4-check",
+   "kind": "lesson_check",
+   "title": "Latihan Singkat Level 04",
+   "difficulty": "expert",
+   "lesson_slug": "tantangan-matematika",
+   "default_count": 3
+  },
+  {
+   "id": "training-beginner",
+   "slug": "training-beginner",
+   "kind": "training",
+   "title": "Training Zone — Beginner",
+   "difficulty": "beginner",
+   "lesson_slug": null,
+   "default_count": 8
+  },
+  {
+   "id": "training-intermediate",
+   "slug": "training-intermediate",
+   "kind": "training",
+   "title": "Training Zone — Intermediate",
+   "difficulty": "intermediate",
+   "lesson_slug": null,
+   "default_count": 8
+  },
+  {
+   "id": "training-expert",
+   "slug": "training-expert",
+   "kind": "training",
+   "title": "Training Zone — Expert",
+   "difficulty": "expert",
+   "lesson_slug": null,
+   "default_count": 8
+  },
+  {
+   "id": "final-challenge",
+   "slug": "final-challenge",
+   "kind": "final",
+   "title": "Final Challenge",
+   "difficulty": "mixed",
+   "lesson_slug": null,
+   "default_count": 15
+  }
+ ],
+ "questions": [
+  {
+   "id": "L1-1",
+   "quiz_id": "lesson-1-check",
+   "position": 1,
+   "code": "L1-1",
+   "type": "number",
+   "prompt": "Hitung banyak kotak pada susunan ini.",
+   "visual": {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3
+   },
+   "options": null,
+   "answer": {
+    "value": 9
+   },
+   "hint": "Hitung banyak baris, lalu banyak kotak di setiap baris.",
+   "explanation": [
+    "Susunan ini memiliki 3 baris.",
+    "Setiap baris berisi 3 kotak.",
+    "3 × 3 = 9. Jadi, ada 9 kotak."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "L1-2",
+   "quiz_id": "lesson-1-check",
+   "position": 2,
+   "code": "L1-2",
+   "type": "grid_choice",
+   "prompt": "Manakah susunan yang membentuk persegi?",
+   "visual": null,
+   "options": [
+    {
+     "rows": 2,
+     "cols": 3
+    },
+    {
+     "rows": 4,
+     "cols": 4
+    },
+    {
+     "rows": 3,
+     "cols": 5
+    },
+    {
+     "rows": 1,
+     "cols": 4
+    }
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Persegi memiliki banyak baris yang SAMA dengan banyak kolom.",
+   "explanation": [
+    "Susunan 2 × 3, 3 × 5, dan 1 × 4 memiliki baris dan kolom yang berbeda.",
+    "Susunan 4 × 4 memiliki 4 baris dan 4 kolom.",
+    "Jadi, susunan yang membentuk persegi adalah 4 × 4."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "L1-3",
+   "quiz_id": "lesson-1-check",
+   "position": 3,
+   "code": "L1-3",
+   "type": "tf",
+   "prompt": "Bilangan 10 termasuk bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": false
+   },
+   "hint": "Coba cari bilangan yang jika dikalikan dengan dirinya sendiri hasilnya 10.",
+   "explanation": [
+    "3 × 3 = 9 dan 4 × 4 = 16.",
+    "10 berada di antara 9 dan 16, jadi tidak ada bilangan asli yang dikalikan dirinya sendiri menghasilkan 10.",
+    "Jadi, 10 BUKAN bilangan persegi. Pernyataan ini salah."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "L2-1",
+   "quiz_id": "lesson-2-check",
+   "position": 1,
+   "code": "L2-1",
+   "type": "sequence",
+   "prompt": "Lengkapi pola bilangan persegi berikut.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     1,
+     4,
+     9,
+     16,
+     null
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     25
+    ]
+   },
+   "hint": "Lihat selisihnya: 3, 5, 7, ... selisih berikutnya bertambah 2.",
+   "explanation": [
+    "Selisih antarsuku: 4 − 1 = 3, 9 − 4 = 5, 16 − 9 = 7.",
+    "Selisih berikutnya adalah 7 + 2 = 9.",
+    "16 + 9 = 25. Jadi, bilangan yang hilang adalah 25."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "L2-2",
+   "quiz_id": "lesson-2-check",
+   "position": 2,
+   "code": "L2-2",
+   "type": "mcq",
+   "prompt": "Selisih antarsuku pada barisan 1, 4, 9, 16, 25 adalah ...",
+   "visual": null,
+   "options": [
+    "2, 3, 4, 5",
+    "3, 5, 7, 9",
+    "3, 4, 5, 6",
+    "4, 5, 6, 7"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Kurangkan setiap suku dengan suku sebelumnya.",
+   "explanation": [
+    "4 − 1 = 3",
+    "9 − 4 = 5",
+    "16 − 9 = 7",
+    "25 − 16 = 9",
+    "Jadi, selisihnya adalah 3, 5, 7, 9."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "L2-3",
+   "quiz_id": "lesson-2-check",
+   "position": 3,
+   "code": "L2-3",
+   "type": "number",
+   "prompt": "Selisih antara 25 dan suku berikutnya adalah 11. Berapakah suku setelah 25?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 36
+   },
+   "hint": "Suku berikutnya = 25 + selisihnya.",
+   "explanation": [
+    "Diketahui suku sekarang 25 dan selisih berikutnya 11.",
+    "25 + 11 = 36.",
+    "Cek: 36 = 6 × 6, jadi benar termasuk bilangan persegi."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "L3-1",
+   "quiz_id": "lesson-3-check",
+   "position": 1,
+   "code": "L3-1",
+   "type": "number",
+   "prompt": "Gunakan rumus Uₙ = n². Tentukan nilai U₇.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 49
+   },
+   "hint": "U₇ artinya n = 7. Kalikan 7 dengan dirinya sendiri.",
+   "explanation": [
+    "Diketahui n = 7.",
+    "U₇ = 7² = 7 × 7.",
+    "7 × 7 = 49. Jadi, U₇ = 49."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "L3-2",
+   "quiz_id": "lesson-3-check",
+   "position": 2,
+   "code": "L3-2",
+   "type": "mcq",
+   "prompt": "Pada rumus Uₙ = n², huruf n menyatakan ...",
+   "visual": null,
+   "options": [
+    "Nilai suku (banyak kotak)",
+    "Nomor urutan suku (panjang sisi persegi)",
+    "Selisih antarsuku",
+    "Jumlah semua suku"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Ingat: n adalah nomor urutan suku, sama dengan panjang sisi perseginya.",
+   "explanation": [
+    "Uₙ adalah NILAI suku ke-n (banyak kotak).",
+    "n adalah NOMOR URUTAN suku.",
+    "Pada susunan persegi, n juga sama dengan banyak kotak di setiap sisi."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "L3-3",
+   "quiz_id": "lesson-3-check",
+   "position": 3,
+   "code": "L3-3",
+   "type": "number",
+   "prompt": "Bilangan 64 merupakan suku ke berapa pada pola bilangan persegi?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 8
+   },
+   "hint": "Cari bilangan yang jika dikalikan dengan dirinya sendiri hasilnya 64.",
+   "explanation": [
+    "Kita mencari n sehingga n × n = 64.",
+    "8 × 8 = 64.",
+    "Jadi, 64 adalah suku ke-8 (n = 8)."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "L4-1",
+   "quiz_id": "lesson-4-check",
+   "position": 1,
+   "code": "L4-1",
+   "type": "number",
+   "prompt": "Ubin kecil disusun membentuk persegi. Setiap sisi berisi 7 ubin. Berapa banyak ubin seluruhnya?",
+   "visual": {
+    "kind": "grid",
+    "rows": 7,
+    "cols": 7
+   },
+   "options": null,
+   "answer": {
+    "value": 49
+   },
+   "hint": "Susunan persegi dengan sisi 7 berarti 7 baris dan 7 kolom.",
+   "explanation": [
+    "Diketahui: setiap sisi 7 ubin, jadi n = 7.",
+    "Ditanya: banyak ubin seluruhnya.",
+    "Jawab: 7 × 7 = 7² = 49.",
+    "Jadi, diperlukan 49 ubin."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "L4-2",
+   "quiz_id": "lesson-4-check",
+   "position": 2,
+   "code": "L4-2",
+   "type": "number",
+   "prompt": "Kursi di aula disusun membentuk persegi dan jumlahnya 100 kursi. Berapa kursi di setiap baris?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 10
+   },
+   "hint": "Cari bilangan yang jika dikalikan dirinya sendiri hasilnya 100.",
+   "explanation": [
+    "Diketahui: banyak kursi 100 dan susunannya persegi.",
+    "Ditanya: banyak kursi di setiap baris (panjang sisi).",
+    "Jawab: 10 × 10 = 100, jadi n = 10.",
+    "Jadi, ada 10 kursi di setiap baris."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "L4-3",
+   "quiz_id": "lesson-4-check",
+   "position": 3,
+   "code": "L4-3",
+   "type": "mcq",
+   "prompt": "Tanaman di taman disusun: susunan ke-1 ada 1 tanaman, ke-2 ada 4, ke-3 ada 9. Rani berkata susunan ke-6 berisi 36 tanaman. Alasan yang paling tepat adalah ...",
+   "visual": null,
+   "options": [
+    "Karena setiap susunan selalu bertambah 6 tanaman",
+    "Karena susunan ke-6 berbentuk persegi 6 × 6, sehingga 6² = 36",
+    "Karena 36 adalah bilangan genap",
+    "Karena 6 + 6 + 6 + 6 + 6 + 6 = 36 adalah kebetulan"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Pikirkan bentuk susunan ke-6: berapa tanaman di setiap sisinya?",
+   "explanation": [
+    "Pola 1, 4, 9 adalah pola bilangan persegi.",
+    "Susunan ke-6 berbentuk persegi 6 × 6.",
+    "6² = 36, jadi alasan yang tepat adalah karena susunan ke-6 berbentuk persegi 6 × 6."
+   ],
+   "skill": "alasan",
+   "ask_reason": true
+  },
+  {
+   "id": "TB-01",
+   "quiz_id": "training-beginner",
+   "position": 1,
+   "code": "TB-01",
+   "type": "number",
+   "prompt": "Hitung banyak kotak pada susunan ini.",
+   "visual": {
+    "kind": "grid",
+    "rows": 2,
+    "cols": 2
+   },
+   "options": null,
+   "answer": {
+    "value": 4
+   },
+   "hint": "Ada berapa baris? Ada berapa kotak di setiap baris?",
+   "explanation": [
+    "Susunan memiliki 2 baris dan 2 kolom.",
+    "2 × 2 = 4.",
+    "Jadi, ada 4 kotak."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-02",
+   "quiz_id": "training-beginner",
+   "position": 2,
+   "code": "TB-02",
+   "type": "number",
+   "prompt": "Hitung banyak kotak pada susunan ini.",
+   "visual": {
+    "kind": "grid",
+    "rows": 5,
+    "cols": 5
+   },
+   "options": null,
+   "answer": {
+    "value": 25
+   },
+   "hint": "Hitung kotak pada satu baris, lalu kalikan dengan banyak barisnya.",
+   "explanation": [
+    "Susunan memiliki 5 baris.",
+    "Setiap baris berisi 5 kotak.",
+    "5 × 5 = 25. Jadi, ada 25 kotak."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-03",
+   "quiz_id": "training-beginner",
+   "position": 3,
+   "code": "TB-03",
+   "type": "grid_choice",
+   "prompt": "Manakah susunan yang membentuk persegi?",
+   "visual": null,
+   "options": [
+    {
+     "rows": 3,
+     "cols": 4
+    },
+    {
+     "rows": 2,
+     "cols": 5
+    },
+    {
+     "rows": 5,
+     "cols": 5
+    },
+    {
+     "rows": 4,
+     "cols": 6
+    }
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Cari susunan yang banyak baris dan kolomnya sama.",
+   "explanation": [
+    "3 × 4, 2 × 5, dan 4 × 6 memiliki baris dan kolom berbeda (persegi panjang).",
+    "5 × 5 memiliki 5 baris dan 5 kolom.",
+    "Jadi, jawabannya susunan 5 × 5."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-04",
+   "quiz_id": "training-beginner",
+   "position": 4,
+   "code": "TB-04",
+   "type": "tf",
+   "prompt": "Susunan dengan 4 baris dan 4 kolom membentuk persegi dan berisi 16 kotak.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": true
+   },
+   "hint": "Baris dan kolomnya sama? Lalu hitung 4 × 4.",
+   "explanation": [
+    "4 baris dan 4 kolom → bentuknya persegi.",
+    "4 × 4 = 16.",
+    "Jadi, pernyataan ini benar."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-05",
+   "quiz_id": "training-beginner",
+   "position": 5,
+   "code": "TB-05",
+   "type": "tf",
+   "prompt": "Susunan dengan 3 baris dan 6 kolom termasuk susunan pola bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": false
+   },
+   "hint": "Susunan persegi harus memiliki baris dan kolom yang sama banyak.",
+   "explanation": [
+    "3 baris tidak sama dengan 6 kolom, jadi bentuknya persegi panjang.",
+    "Banyak kotaknya 3 × 6 = 18, dan 18 bukan bilangan persegi (4² = 16, 5² = 25).",
+    "Jadi, pernyataan ini salah."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-06",
+   "quiz_id": "training-beginner",
+   "position": 6,
+   "code": "TB-06",
+   "type": "mcq",
+   "prompt": "Manakah yang termasuk bilangan persegi?",
+   "visual": null,
+   "options": [
+    "12",
+    "20",
+    "25",
+    "30"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Bilangan persegi = bilangan yang dikalikan dengan dirinya sendiri.",
+   "explanation": [
+    "12, 20, dan 30 tidak dapat ditulis sebagai n × n.",
+    "25 = 5 × 5.",
+    "Jadi, 25 adalah bilangan persegi."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-07",
+   "quiz_id": "training-beginner",
+   "position": 7,
+   "code": "TB-07",
+   "type": "mcq",
+   "prompt": "Bilangan persegi diperoleh dengan cara ...",
+   "visual": null,
+   "options": [
+    "Menjumlahkan bilangan dengan dirinya sendiri",
+    "Mengalikan bilangan asli dengan dirinya sendiri",
+    "Mengalikan bilangan dengan 2",
+    "Menambahkan 2 setiap kali"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Ingat: 2 × 2 = 4, 3 × 3 = 9.",
+   "explanation": [
+    "Contoh: 1 × 1 = 1, 2 × 2 = 4, 3 × 3 = 9.",
+    "Setiap bilangan asli dikalikan dengan dirinya sendiri.",
+    "Jadi, jawabannya mengalikan bilangan asli dengan dirinya sendiri."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-08",
+   "quiz_id": "training-beginner",
+   "position": 8,
+   "code": "TB-08",
+   "type": "number",
+   "prompt": "Sebuah persegi tersusun dari kotak, dengan 6 kotak di setiap sisinya. Berapa banyak kotaknya?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 36
+   },
+   "hint": "6 kotak di setiap sisi berarti 6 baris dan 6 kolom.",
+   "explanation": [
+    "Persegi memiliki 6 baris dan 6 kolom.",
+    "6 × 6 = 36.",
+    "Jadi, ada 36 kotak."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-09",
+   "quiz_id": "training-beginner",
+   "position": 9,
+   "code": "TB-09",
+   "type": "grid_choice",
+   "prompt": "Susunan manakah yang berisi 9 kotak DAN berbentuk persegi?",
+   "visual": null,
+   "options": [
+    {
+     "rows": 1,
+     "cols": 9
+    },
+    {
+     "rows": 3,
+     "cols": 3
+    },
+    {
+     "rows": 2,
+     "cols": 4
+    },
+    {
+     "rows": 4,
+     "cols": 4
+    }
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Ada susunan berisi 9 kotak yang bukan persegi. Periksa juga bentuknya!",
+   "explanation": [
+    "1 × 9 berisi 9 kotak, tetapi bentuknya memanjang (bukan persegi).",
+    "2 × 4 berisi 8 kotak dan 4 × 4 berisi 16 kotak.",
+    "3 × 3 berisi 9 kotak dan berbentuk persegi. Jadi, jawabannya 3 × 3."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-10",
+   "quiz_id": "training-beginner",
+   "position": 10,
+   "code": "TB-10",
+   "type": "tf",
+   "prompt": "Bilangan 1 termasuk bilangan persegi karena 1 × 1 = 1.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": true
+   },
+   "hint": "Apakah 1 bisa ditulis sebagai bilangan yang dikalikan dirinya sendiri?",
+   "explanation": [
+    "1 × 1 = 1.",
+    "Susunan 1 × 1 adalah persegi paling kecil.",
+    "Jadi, 1 adalah bilangan persegi pertama. Pernyataan benar."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-11",
+   "quiz_id": "training-beginner",
+   "position": 11,
+   "code": "TB-11",
+   "type": "mcq",
+   "prompt": "Bilangan persegi ke-4 adalah ...",
+   "visual": null,
+   "options": [
+    "8",
+    "12",
+    "16",
+    "20"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Bilangan persegi ke-4 berasal dari persegi 4 × 4.",
+   "explanation": [
+    "Bilangan persegi: 1, 4, 9, 16, ...",
+    "Suku ke-4 adalah 4 × 4 = 16.",
+    "Jadi, jawabannya 16."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TB-12",
+   "quiz_id": "training-beginner",
+   "position": 12,
+   "code": "TB-12",
+   "type": "number",
+   "prompt": "Perhatikan susunan ke-1, ke-2, dan ke-3. Berapa banyak kotak pada susunan ke-4?",
+   "visual": {
+    "kind": "grid_series",
+    "ns": [
+     1,
+     2,
+     3
+    ]
+   },
+   "options": null,
+   "answer": {
+    "value": 16
+   },
+   "hint": "Susunan ke-1 = 1 × 1, ke-2 = 2 × 2, ke-3 = 3 × 3. Bagaimana susunan ke-4?",
+   "explanation": [
+    "Susunan ke-1 = 1 × 1 = 1, ke-2 = 2 × 2 = 4, ke-3 = 3 × 3 = 9.",
+    "Susunan ke-4 berbentuk 4 × 4.",
+    "4 × 4 = 16. Jadi, ada 16 kotak."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-01",
+   "quiz_id": "training-intermediate",
+   "position": 1,
+   "code": "TI-01",
+   "type": "sequence",
+   "prompt": "Lengkapi pola bilangan persegi berikut.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     1,
+     4,
+     9,
+     null,
+     25
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     16
+    ]
+   },
+   "hint": "Selisihnya 3, 5, ... lalu bertambah 2.",
+   "explanation": [
+    "4 − 1 = 3, 9 − 4 = 5, maka selisih berikutnya 7.",
+    "9 + 7 = 16.",
+    "Cek: 25 − 16 = 9 (selisih berikutnya). Jadi, bilangan yang hilang 16."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-02",
+   "quiz_id": "training-intermediate",
+   "position": 2,
+   "code": "TI-02",
+   "type": "sequence",
+   "prompt": "Lengkapi dua bilangan berikutnya.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     4,
+     9,
+     16,
+     null,
+     null
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     25,
+     36
+    ]
+   },
+   "hint": "Selisih 4 ke 9 adalah 5, 9 ke 16 adalah 7. Selisih berikutnya 9, lalu 11.",
+   "explanation": [
+    "Selisih: 9 − 4 = 5, 16 − 9 = 7.",
+    "Selisih berikutnya 9 dan 11.",
+    "16 + 9 = 25 dan 25 + 11 = 36.",
+    "Jadi, dua bilangan berikutnya 25 dan 36."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-03",
+   "quiz_id": "training-intermediate",
+   "position": 3,
+   "code": "TI-03",
+   "type": "number",
+   "prompt": "Berapakah selisih antara 16 dan 25?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 9
+   },
+   "hint": "Kurangkan bilangan yang lebih besar dengan yang lebih kecil.",
+   "explanation": [
+    "25 − 16 = 9.",
+    "Jadi, selisihnya 9."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-04",
+   "quiz_id": "training-intermediate",
+   "position": 4,
+   "code": "TI-04",
+   "type": "mcq",
+   "prompt": "Selisih antarsuku pada pola bilangan persegi membentuk barisan ...",
+   "visual": null,
+   "options": [
+    "Bilangan genap berurutan",
+    "Bilangan ganjil berurutan",
+    "Bilangan yang selalu sama",
+    "Bilangan persegi"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Hitung selisihnya: 4 − 1, 9 − 4, 16 − 9, ...",
+   "explanation": [
+    "Selisihnya: 3, 5, 7, 9, ...",
+    "Bilangan 3, 5, 7, 9 adalah bilangan ganjil berurutan.",
+    "Jadi, jawabannya bilangan ganjil berurutan."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-05",
+   "quiz_id": "training-intermediate",
+   "position": 5,
+   "code": "TI-05",
+   "type": "number",
+   "prompt": "Tentukan bilangan berikutnya: 25, 36, 49, 64, ...",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 81
+   },
+   "hint": "25 = 5 × 5, 36 = 6 × 6, ... maka berikutnya?",
+   "explanation": [
+    "25 = 5², 36 = 6², 49 = 7², 64 = 8².",
+    "Berikutnya 9² = 9 × 9 = 81.",
+    "Cek dengan selisih: 64 + 17 = 81."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-06",
+   "quiz_id": "training-intermediate",
+   "position": 6,
+   "code": "TI-06",
+   "type": "sequence",
+   "prompt": "Lengkapi bilangan yang hilang.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     null,
+     9,
+     16,
+     25,
+     36
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     4
+    ]
+   },
+   "hint": "Bilangan persegi dimulai dari 1 × 1, lalu 2 × 2, ...",
+   "explanation": [
+    "9 = 3 × 3, 16 = 4 × 4, 25 = 5 × 5.",
+    "Sebelum 9 adalah 2 × 2 = 4.",
+    "Jadi, bilangan yang hilang 4."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-07",
+   "quiz_id": "training-intermediate",
+   "position": 7,
+   "code": "TI-07",
+   "type": "number",
+   "prompt": "Pada barisan 1, 4, 9, 16, 25, 36, selisihnya 3, 5, 7, 9, 11. Berapakah selisih berikutnya?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 13
+   },
+   "hint": "Selisihnya selalu bertambah 2.",
+   "explanation": [
+    "Selisih terakhir adalah 11.",
+    "11 + 2 = 13.",
+    "Cek: 36 + 13 = 49 = 7 × 7. Jadi, selisih berikutnya 13."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-08",
+   "quiz_id": "training-intermediate",
+   "position": 8,
+   "code": "TI-08",
+   "type": "tf",
+   "prompt": "Pada pola 1, 4, 9, 16, selisih antarsukunya selalu bertambah 2.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": true
+   },
+   "hint": "Hitung selisihnya, lalu bandingkan.",
+   "explanation": [
+    "Selisih: 3, 5, 7.",
+    "5 − 3 = 2 dan 7 − 5 = 2.",
+    "Jadi, pernyataan benar."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-09",
+   "quiz_id": "training-intermediate",
+   "position": 9,
+   "code": "TI-09",
+   "type": "mcq",
+   "prompt": "49, 64, 81, ... Bilangan berikutnya adalah ...",
+   "visual": null,
+   "options": [
+    "90",
+    "96",
+    "100",
+    "121"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "49 = 7 × 7, 64 = 8 × 8, 81 = 9 × 9.",
+   "explanation": [
+    "Polanya 7², 8², 9², ...",
+    "Berikutnya 10² = 10 × 10 = 100.",
+    "Jadi, jawabannya 100."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-10",
+   "quiz_id": "training-intermediate",
+   "position": 10,
+   "code": "TI-10",
+   "type": "sequence",
+   "prompt": "Lengkapi bilangan yang hilang.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     36,
+     49,
+     null,
+     81,
+     null
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     64,
+     100
+    ]
+   },
+   "hint": "36 = 6², 49 = 7². Lanjutkan dengan 8², 9², 10².",
+   "explanation": [
+    "36 = 6², 49 = 7², maka berikutnya 8² = 64.",
+    "81 = 9², maka berikutnya 10² = 100.",
+    "Jadi, bilangan yang hilang 64 dan 100."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-11",
+   "quiz_id": "training-intermediate",
+   "position": 11,
+   "code": "TI-11",
+   "type": "number",
+   "prompt": "Suku ke-7 pola bilangan persegi adalah 49. Berapakah selisih suku ke-7 dan suku ke-8?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 15
+   },
+   "hint": "Cari dulu suku ke-8, lalu kurangkan dengan 49.",
+   "explanation": [
+    "Suku ke-8 = 8 × 8 = 64.",
+    "64 − 49 = 15.",
+    "Jadi, selisihnya 15."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TI-12",
+   "quiz_id": "training-intermediate",
+   "position": 12,
+   "code": "TI-12",
+   "type": "tf",
+   "prompt": "Bilangan setelah 81 pada pola bilangan persegi adalah 90.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": false
+   },
+   "hint": "81 = 9 × 9. Bilangan persegi berikutnya berasal dari 10 × 10.",
+   "explanation": [
+    "81 = 9².",
+    "Berikutnya 10² = 100, bukan 90.",
+    "Jadi, pernyataan salah."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-01",
+   "quiz_id": "training-expert",
+   "position": 1,
+   "code": "TE-01",
+   "type": "number",
+   "prompt": "Tentukan U₉ menggunakan rumus Uₙ = n².",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 81
+   },
+   "hint": "n = 9, jadi hitung 9 × 9.",
+   "explanation": [
+    "Diketahui n = 9.",
+    "U₉ = 9² = 9 × 9 = 81.",
+    "Jadi, U₉ = 81."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-02",
+   "quiz_id": "training-expert",
+   "position": 2,
+   "code": "TE-02",
+   "type": "number",
+   "prompt": "Tentukan suku ke-12 pola bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 144
+   },
+   "hint": "Suku ke-12 berarti n = 12.",
+   "explanation": [
+    "Diketahui n = 12.",
+    "U₁₂ = 12² = 12 × 12 = 144.",
+    "Jadi, suku ke-12 adalah 144."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-03",
+   "quiz_id": "training-expert",
+   "position": 3,
+   "code": "TE-03",
+   "type": "number",
+   "prompt": "Bilangan 225 merupakan suku ke berapa?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 15
+   },
+   "hint": "Cari n sehingga n × n = 225. Coba bilangan yang berakhiran 5.",
+   "explanation": [
+    "Kita mencari n sehingga n² = 225.",
+    "15 × 15 = 225.",
+    "Jadi, 225 adalah suku ke-15."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-04",
+   "quiz_id": "training-expert",
+   "position": 4,
+   "code": "TE-04",
+   "type": "mcq",
+   "prompt": "Rumus suku ke-n pola bilangan persegi adalah ...",
+   "visual": null,
+   "options": [
+    "Uₙ = 2n",
+    "Uₙ = n + n",
+    "Uₙ = n²",
+    "Uₙ = n + 2"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Suku ke-n berbentuk persegi n × n.",
+   "explanation": [
+    "Susunan ke-n berbentuk persegi dengan n baris dan n kolom.",
+    "Banyak kotak = n × n = n².",
+    "Jadi, Uₙ = n²."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-05",
+   "quiz_id": "training-expert",
+   "position": 5,
+   "code": "TE-05",
+   "type": "number",
+   "prompt": "Lantai kamar dipasang ubin yang membentuk persegi. Setiap sisi lantai berisi 8 ubin. Berapa banyak ubin yang dibutuhkan?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 64
+   },
+   "hint": "Tuliskan dulu: diketahui apa, ditanya apa. Sisi 8 ubin berarti n = 8.",
+   "explanation": [
+    "Diketahui: setiap sisi 8 ubin (n = 8).",
+    "Ditanya: banyak ubin seluruhnya.",
+    "Jawab: U₈ = 8² = 64.",
+    "Jadi, dibutuhkan 64 ubin."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": true
+  },
+  {
+   "id": "TE-06",
+   "quiz_id": "training-expert",
+   "position": 6,
+   "code": "TE-06",
+   "type": "number",
+   "prompt": "Sebuah taman memiliki tanaman yang disusun membentuk persegi. Susunan ke-1 berisi 1 tanaman, susunan ke-2 berisi 4 tanaman, dan susunan ke-3 berisi 9 tanaman. Berapa banyak tanaman pada susunan ke-10?",
+   "visual": {
+    "kind": "grid_series",
+    "ns": [
+     1,
+     2,
+     3
+    ]
+   },
+   "options": null,
+   "answer": {
+    "value": 100
+   },
+   "hint": "Pola 1, 4, 9 adalah pola bilangan persegi. Gunakan Uₙ = n² dengan n = 10.",
+   "explanation": [
+    "Diketahui: 1, 4, 9, ... adalah pola bilangan persegi.",
+    "Ditanya: U₁₀.",
+    "Jawab: U₁₀ = 10² = 100.",
+    "Jadi, ada 100 tanaman pada susunan ke-10."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": true
+  },
+  {
+   "id": "TE-07",
+   "quiz_id": "training-expert",
+   "position": 7,
+   "code": "TE-07",
+   "type": "number",
+   "prompt": "Panitia memiliki 144 lampu hias dan ingin memasang semuanya dalam satu susunan persegi (susunan ke-1 = 1 lampu, ke-2 = 4 lampu, dan seterusnya). Susunan ke berapa yang terbentuk?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 12
+   },
+   "hint": "Cari n sehingga n × n = 144.",
+   "explanation": [
+    "Diketahui: banyak lampu 144 = Uₙ.",
+    "Ditanya: nilai n.",
+    "Jawab: 12 × 12 = 144, jadi n = 12.",
+    "Jadi, terbentuk susunan ke-12 (12 lampu di setiap sisi)."
+   ],
+   "skill": "tafsir",
+   "ask_reason": true
+  },
+  {
+   "id": "TE-08",
+   "quiz_id": "training-expert",
+   "position": 8,
+   "code": "TE-08",
+   "type": "mcq",
+   "prompt": "Dimas menghitung U₅ = 5 × 2 = 10. Di mana letak kesalahannya?",
+   "visual": null,
+   "options": [
+    "Dimas sudah benar",
+    "n² berarti n × n, bukan n × 2, jadi U₅ = 5 × 5 = 25",
+    "Seharusnya U₅ = 5 + 5 = 10",
+    "Seharusnya U₅ = 5 + 2 = 7"
+   ],
+   "answer": {
+    "index": 1
+   },
+   "hint": "Apa arti pangkat dua (n²)?",
+   "explanation": [
+    "n² berarti n dikalikan dengan dirinya sendiri, bukan dikali 2.",
+    "U₅ = 5² = 5 × 5 = 25.",
+    "Jadi, Dimas salah mengartikan pangkat dua."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-09",
+   "quiz_id": "training-expert",
+   "position": 9,
+   "code": "TE-09",
+   "type": "number",
+   "prompt": "Berapakah selisih antara U₁₀ dan U₉?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 19
+   },
+   "hint": "Hitung U₁₀ dan U₉ terlebih dahulu.",
+   "explanation": [
+    "U₁₀ = 10² = 100.",
+    "U₉ = 9² = 81.",
+    "100 − 81 = 19. Jadi, selisihnya 19."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-10",
+   "quiz_id": "training-expert",
+   "position": 10,
+   "code": "TE-10",
+   "type": "mcq",
+   "prompt": "Kursi di aula disusun membentuk persegi dengan 20 baris dan 20 kolom. Banyak kursi seluruhnya adalah ...",
+   "visual": null,
+   "options": [
+    "40",
+    "200",
+    "400",
+    "2.020"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Banyak kursi = banyak baris × banyak kolom.",
+   "explanation": [
+    "Diketahui: 20 baris dan 20 kolom.",
+    "20 × 20 = 400.",
+    "Jadi, ada 400 kursi."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-11",
+   "quiz_id": "training-expert",
+   "position": 11,
+   "code": "TE-11",
+   "type": "tf",
+   "prompt": "Bilangan 50 merupakan suku pada pola bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": false
+   },
+   "hint": "Bandingkan 50 dengan 7 × 7 dan 8 × 8.",
+   "explanation": [
+    "7² = 49 dan 8² = 64.",
+    "50 berada di antara 49 dan 64.",
+    "Tidak ada bilangan asli n dengan n² = 50. Jadi, pernyataan salah."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "TE-12",
+   "quiz_id": "training-expert",
+   "position": 12,
+   "code": "TE-12",
+   "type": "number",
+   "prompt": "Pak Budi menanam 81 pohon yang disusun membentuk persegi. Ia ingin memperbesar susunannya sehingga setiap sisi bertambah 1 pohon. Berapa pohon tambahan yang dibutuhkan?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 19
+   },
+   "hint": "Cari dulu panjang sisi sekarang, lalu panjang sisi baru.",
+   "explanation": [
+    "Diketahui: 81 pohon = 9 × 9, jadi sisi sekarang 9 pohon.",
+    "Sisi baru = 9 + 1 = 10, banyak pohon = 10 × 10 = 100.",
+    "Tambahan = 100 − 81 = 19.",
+    "Jadi, dibutuhkan 19 pohon tambahan."
+   ],
+   "skill": "tafsir",
+   "ask_reason": true
+  },
+  {
+   "id": "FC-01",
+   "quiz_id": "final-challenge",
+   "position": 1,
+   "code": "FC-01",
+   "type": "number",
+   "prompt": "Hitung banyak kotak pada susunan ini.",
+   "visual": {
+    "kind": "grid",
+    "rows": 4,
+    "cols": 4
+   },
+   "options": null,
+   "answer": {
+    "value": 16
+   },
+   "hint": "Hitung baris dan kolomnya.",
+   "explanation": [
+    "Susunan memiliki 4 baris dan 4 kolom.",
+    "4 × 4 = 16."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-02",
+   "quiz_id": "final-challenge",
+   "position": 2,
+   "code": "FC-02",
+   "type": "grid_choice",
+   "prompt": "Manakah susunan yang membentuk persegi?",
+   "visual": null,
+   "options": [
+    {
+     "rows": 2,
+     "cols": 6
+    },
+    {
+     "rows": 3,
+     "cols": 4
+    },
+    {
+     "rows": 4,
+     "cols": 3
+    },
+    {
+     "rows": 6,
+     "cols": 6
+    }
+   ],
+   "answer": {
+    "index": 3
+   },
+   "hint": "Baris dan kolom harus sama banyak.",
+   "explanation": [
+    "3 × 4 dan 4 × 3 sama-sama berisi 12 kotak, tetapi bentuknya persegi panjang.",
+    "2 × 6 juga persegi panjang.",
+    "6 × 6 adalah persegi."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-03",
+   "quiz_id": "final-challenge",
+   "position": 3,
+   "code": "FC-03",
+   "type": "tf",
+   "prompt": "36 merupakan bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": true
+   },
+   "hint": "Apakah ada bilangan yang dikalikan dirinya sendiri hasilnya 36?",
+   "explanation": [
+    "6 × 6 = 36.",
+    "Jadi, 36 adalah bilangan persegi (suku ke-6)."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-04",
+   "quiz_id": "final-challenge",
+   "position": 4,
+   "code": "FC-04",
+   "type": "mcq",
+   "prompt": "Bilangan berikut yang BUKAN bilangan persegi adalah ...",
+   "visual": null,
+   "options": [
+    "16",
+    "49",
+    "63",
+    "81"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Periksa setiap bilangan: dapatkah ditulis n × n?",
+   "explanation": [
+    "16 = 4 × 4, 49 = 7 × 7, 81 = 9 × 9.",
+    "63 tidak dapat ditulis n × n (7² = 49, 8² = 64).",
+    "Jadi, 63 bukan bilangan persegi."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-05",
+   "quiz_id": "final-challenge",
+   "position": 5,
+   "code": "FC-05",
+   "type": "sequence",
+   "prompt": "Lengkapi pola bilangan persegi berikut.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     1,
+     4,
+     null,
+     16,
+     null
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     9,
+     25
+    ]
+   },
+   "hint": "1 = 1², 4 = 2², 16 = 4². Lengkapi 3² dan 5².",
+   "explanation": [
+    "Bilangan yang hilang adalah 3² = 9.",
+    "Setelah 16 = 4² adalah 5² = 25."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-06",
+   "quiz_id": "final-challenge",
+   "position": 6,
+   "code": "FC-06",
+   "type": "number",
+   "prompt": "Tentukan bilangan berikutnya: 64, 81, 100, ...",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 121
+   },
+   "hint": "64 = 8², 81 = 9², 100 = 10².",
+   "explanation": [
+    "Polanya 8², 9², 10², ...",
+    "Berikutnya 11² = 121."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-07",
+   "quiz_id": "final-challenge",
+   "position": 7,
+   "code": "FC-07",
+   "type": "mcq",
+   "prompt": "Selisih antara 9 dan 16 adalah ...",
+   "visual": null,
+   "options": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Kurangkan 16 dengan 9.",
+   "explanation": [
+    "16 − 9 = 7."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-08",
+   "quiz_id": "final-challenge",
+   "position": 8,
+   "code": "FC-08",
+   "type": "number",
+   "prompt": "Selisih antarsuku pola bilangan persegi adalah 3, 5, 7, 9, ... Selisih setelah 9 adalah ...",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 11
+   },
+   "hint": "Selisihnya selalu bertambah 2.",
+   "explanation": [
+    "9 + 2 = 11."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-09",
+   "quiz_id": "final-challenge",
+   "position": 9,
+   "code": "FC-09",
+   "type": "sequence",
+   "prompt": "Lengkapi bilangan yang hilang.",
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     49,
+     null,
+     81,
+     100,
+     null
+    ]
+   },
+   "options": null,
+   "answer": {
+    "values": [
+     64,
+     121
+    ]
+   },
+   "hint": "49 = 7², 81 = 9², 100 = 10².",
+   "explanation": [
+    "Di antara 49 (7²) dan 81 (9²) adalah 8² = 64.",
+    "Setelah 100 (10²) adalah 11² = 121."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-10",
+   "quiz_id": "final-challenge",
+   "position": 10,
+   "code": "FC-10",
+   "type": "number",
+   "prompt": "Tentukan U₁₁ pada pola bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 121
+   },
+   "hint": "U₁₁ berarti n = 11.",
+   "explanation": [
+    "U₁₁ = 11² = 11 × 11 = 121."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-11",
+   "quiz_id": "final-challenge",
+   "position": 11,
+   "code": "FC-11",
+   "type": "number",
+   "prompt": "Tentukan suku ke-15 pola bilangan persegi.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 225
+   },
+   "hint": "Hitung 15 × 15.",
+   "explanation": [
+    "U₁₅ = 15² = 15 × 15 = 225."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-12",
+   "quiz_id": "final-challenge",
+   "position": 12,
+   "code": "FC-12",
+   "type": "number",
+   "prompt": "Bilangan 196 merupakan suku ke berapa?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 14
+   },
+   "hint": "Cari n sehingga n × n = 196. Petunjuk: n berada di antara 10 dan 15.",
+   "explanation": [
+    "Kita mencari n dengan n² = 196.",
+    "14 × 14 = 196.",
+    "Jadi, 196 adalah suku ke-14."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-13",
+   "quiz_id": "final-challenge",
+   "position": 13,
+   "code": "FC-13",
+   "type": "mcq",
+   "prompt": "Pada rumus Uₙ = n², U₆ berarti ...",
+   "visual": null,
+   "options": [
+    "Suku ke-6, yaitu 6 × 6 = 36",
+    "Suku ke-36",
+    "6 × 2 = 12",
+    "6 + 6 = 12"
+   ],
+   "answer": {
+    "index": 0
+   },
+   "hint": "Angka kecil 6 menunjukkan nomor urutan suku.",
+   "explanation": [
+    "U₆ adalah suku ke-6.",
+    "U₆ = 6² = 6 × 6 = 36."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-14",
+   "quiz_id": "final-challenge",
+   "position": 14,
+   "code": "FC-14",
+   "type": "tf",
+   "prompt": "U₃ = 3² = 6.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": false
+   },
+   "hint": "3² berarti 3 × 3, bukan 3 × 2.",
+   "explanation": [
+    "3² = 3 × 3 = 9.",
+    "Jadi, U₃ = 9, pernyataan salah."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-15",
+   "quiz_id": "final-challenge",
+   "position": 15,
+   "code": "FC-15",
+   "type": "number",
+   "prompt": "Ubin disusun membentuk persegi dengan 9 ubin di setiap sisi. Berapa banyak ubin seluruhnya?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 81
+   },
+   "hint": "Sisi 9 ubin berarti n = 9.",
+   "explanation": [
+    "Diketahui n = 9.",
+    "Banyak ubin = 9² = 81.",
+    "Jadi, ada 81 ubin."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-16",
+   "quiz_id": "final-challenge",
+   "position": 16,
+   "code": "FC-16",
+   "type": "number",
+   "prompt": "Sebanyak 121 kursi disusun membentuk persegi. Berapa kursi di setiap baris?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 11
+   },
+   "hint": "Cari n sehingga n × n = 121.",
+   "explanation": [
+    "Diketahui: 121 kursi, susunan persegi.",
+    "11 × 11 = 121.",
+    "Jadi, ada 11 kursi di setiap baris."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-17",
+   "quiz_id": "final-challenge",
+   "position": 17,
+   "code": "FC-17",
+   "type": "number",
+   "prompt": "Lampu hias disusun dengan pola 1, 4, 9, 16, ... Berapa banyak lampu pada susunan ke-7?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 49
+   },
+   "hint": "Gunakan Uₙ = n² dengan n = 7.",
+   "explanation": [
+    "U₇ = 7² = 49.",
+    "Jadi, ada 49 lampu."
+   ],
+   "skill": "konsep",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-18",
+   "quiz_id": "final-challenge",
+   "position": 18,
+   "code": "FC-18",
+   "type": "number",
+   "prompt": "Papan catur berukuran 8 petak × 8 petak. Berapa banyak petak pada papan catur?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 64
+   },
+   "hint": "Papan catur berbentuk persegi 8 × 8.",
+   "explanation": [
+    "8 × 8 = 8² = 64.",
+    "Jadi, ada 64 petak."
+   ],
+   "skill": "identifikasi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-19",
+   "quiz_id": "final-challenge",
+   "position": 19,
+   "code": "FC-19",
+   "type": "mcq",
+   "prompt": "Rina berkata: \"Suku ke-5 adalah 25, karena persegi ke-5 memiliki 5 kotak di setiap sisinya.\" Pernyataan Rina ...",
+   "visual": null,
+   "options": [
+    "Benar, karena 5 × 5 = 25",
+    "Salah, seharusnya 10",
+    "Salah, seharusnya 5",
+    "Salah, seharusnya 20"
+   ],
+   "answer": {
+    "index": 0
+   },
+   "hint": "Persegi ke-5 berbentuk 5 × 5.",
+   "explanation": [
+    "Persegi ke-5 memiliki 5 baris dan 5 kolom.",
+    "5 × 5 = 25.",
+    "Jadi, Rina benar."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-20",
+   "quiz_id": "final-challenge",
+   "position": 20,
+   "code": "FC-20",
+   "type": "number",
+   "prompt": "Tanaman akan ditanam membentuk persegi dengan 12 tanaman di setiap sisi. Jika sudah ditanam 30 tanaman, berapa tanaman lagi yang harus ditanam?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 114
+   },
+   "hint": "Hitung dulu semua tanaman yang dibutuhkan, lalu kurangi yang sudah ditanam.",
+   "explanation": [
+    "Total tanaman = 12² = 144.",
+    "Sisa = 144 − 30 = 114.",
+    "Jadi, masih perlu 114 tanaman."
+   ],
+   "skill": "tafsir",
+   "ask_reason": true
+  },
+  {
+   "id": "FC-21",
+   "quiz_id": "final-challenge",
+   "position": 21,
+   "code": "FC-21",
+   "type": "grid_choice",
+   "prompt": "Manakah susunan yang menunjukkan suku ke-3 pola bilangan persegi?",
+   "visual": null,
+   "options": [
+    {
+     "rows": 1,
+     "cols": 3
+    },
+    {
+     "rows": 2,
+     "cols": 3
+    },
+    {
+     "rows": 3,
+     "cols": 3
+    },
+    {
+     "rows": 3,
+     "cols": 4
+    }
+   ],
+   "answer": {
+    "index": 2
+   },
+   "hint": "Suku ke-3 berbentuk persegi dengan sisi 3.",
+   "explanation": [
+    "Suku ke-3 = 3 × 3 = 9 kotak.",
+    "Susunan 3 × 3 adalah jawabannya."
+   ],
+   "skill": "hubungan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-22",
+   "quiz_id": "final-challenge",
+   "position": 22,
+   "code": "FC-22",
+   "type": "tf",
+   "prompt": "Selisih dua bilangan persegi yang berurutan selalu bilangan ganjil.",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": true
+   },
+   "hint": "Coba: 4 − 1, 9 − 4, 16 − 9, ...",
+   "explanation": [
+    "Selisihnya 3, 5, 7, 9, ... semuanya ganjil.",
+    "Secara visual, untuk memperbesar persegi n × n menjadi (n+1) × (n+1) kita menambah n + n + 1 kotak, yaitu 2n + 1 (selalu ganjil).",
+    "Jadi, pernyataan benar."
+   ],
+   "skill": "alasan",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-23",
+   "quiz_id": "final-challenge",
+   "position": 23,
+   "code": "FC-23",
+   "type": "number",
+   "prompt": "Suku ke berapa yang bernilai 400?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 20
+   },
+   "hint": "Cari n sehingga n × n = 400.",
+   "explanation": [
+    "20 × 20 = 400.",
+    "Jadi, 400 adalah suku ke-20."
+   ],
+   "skill": "strategi",
+   "ask_reason": false
+  },
+  {
+   "id": "FC-24",
+   "quiz_id": "final-challenge",
+   "position": 24,
+   "code": "FC-24",
+   "type": "number",
+   "prompt": "Tersedia 50 kotak untuk membuat satu susunan persegi (susunan ke-n membutuhkan n² kotak). Susunan persegi terbesar yang dapat dibuat adalah susunan ke berapa?",
+   "visual": null,
+   "options": null,
+   "answer": {
+    "value": 7
+   },
+   "hint": "Bandingkan 50 dengan 7² dan 8².",
+   "explanation": [
+    "7² = 49 kotak (cukup, karena 49 ≤ 50).",
+    "8² = 64 kotak (tidak cukup, karena 64 > 50).",
+    "Jadi, susunan terbesar adalah susunan ke-7 dan tersisa 1 kotak."
+   ],
+   "skill": "tafsir",
+   "ask_reason": true
+  }
+ ],
+ "games": [
+  {
+   "id": "square-hunter",
+   "slug": "square-hunter",
+   "title": "Square Hunter",
+   "description": "Temukan semua susunan yang membentuk persegi.",
+   "max_xp": 40
+  },
+  {
+   "id": "complete-pattern",
+   "slug": "complete-pattern",
+   "title": "Complete the Pattern",
+   "description": "Isi bilangan yang hilang pada pola.",
+   "max_xp": 40
+  },
+  {
+   "id": "next-number",
+   "slug": "next-number",
+   "title": "Find the Next Number",
+   "description": "Tebak bilangan berikutnya sebelum waktu habis.",
+   "max_xp": 40
+  },
+  {
+   "id": "formula-challenge",
+   "slug": "formula-challenge",
+   "title": "Square Formula Challenge",
+   "description": "Bangun persegi dan gunakan rumus Uₙ = n².",
+   "max_xp": 40
+  },
+  {
+   "id": "adventure-quest",
+   "slug": "adventure-quest",
+   "title": "Square Adventure Quest",
+   "description": "Buka gerbang demi gerbang menuju Kastel Persegi.",
+   "max_xp": 40
+  }
+ ],
+ "achievements": [
+  {
+   "id": "first-adventure",
+   "slug": "first-adventure",
+   "title": "First Adventure",
+   "icon": "flag",
+   "description": "Menyelesaikan misi pertama.",
+   "sort_order": 1
+  },
+  {
+   "id": "pattern-explorer",
+   "slug": "pattern-explorer",
+   "title": "Pattern Explorer",
+   "icon": "compass",
+   "description": "Menyelesaikan materi Level 01 — Kenali Polanya.",
+   "sort_order": 2
+  },
+  {
+   "id": "number-detective",
+   "slug": "number-detective",
+   "title": "Number Detective",
+   "icon": "search",
+   "description": "Berhasil melengkapi pola pada Level 02 — Lengkapi Pola.",
+   "sort_order": 3
+  },
+  {
+   "id": "formula-master",
+   "slug": "formula-master",
+   "title": "Formula Master",
+   "icon": "sigma",
+   "description": "Memahami rumus pola bilangan persegi (Level 03).",
+   "sort_order": 4
+  },
+  {
+   "id": "square-expert",
+   "slug": "square-expert",
+   "title": "Square Expert",
+   "icon": "gem",
+   "description": "Menyelesaikan Training Expert dengan skor minimal 70.",
+   "sort_order": 5
+  },
+  {
+   "id": "math-adventurer",
+   "slug": "math-adventurer",
+   "title": "Math Adventurer",
+   "icon": "mountain",
+   "description": "Menyelesaikan Level 04 — Tantangan Matematika.",
+   "sort_order": 6
+  },
+  {
+   "id": "adventure-champion",
+   "slug": "adventure-champion",
+   "title": "Adventure Champion",
+   "icon": "trophy",
+   "description": "Menyelesaikan Final Challenge.",
+   "sort_order": 7
+  },
+  {
+   "id": "playground-hero",
+   "slug": "playground-hero",
+   "title": "Playground Hero",
+   "icon": "gamepad",
+   "description": "Memainkan kelima permainan di Square Playground.",
+   "sort_order": 8
+  },
+  {
+   "id": "perfect-square",
+   "slug": "perfect-square",
+   "title": "Perfect Square",
+   "icon": "star",
+   "description": "Meraih skor 100 pada Final Challenge.",
+   "sort_order": 9
+  }
+ ],
+ "quiz_max_xp": {
+  "training": {
+   "beginner": 30,
+   "intermediate": 40,
+   "expert": 50
+  },
+  "final": 100
+ },
+ "levels": [
+  {
+   "min": 0,
+   "name": "Petualang Pemula"
+  },
+  {
+   "min": 80,
+   "name": "Penjelajah Kotak"
+  },
+  {
+   "min": 180,
+   "name": "Pencari Pola"
+  },
+  {
+   "min": 300,
+   "name": "Detektif Bilangan"
+  },
+  {
+   "min": 450,
+   "name": "Ahli Rumus"
+  },
+  {
+   "min": 600,
+   "name": "Juara Persegi"
+  }
+ ]
+}

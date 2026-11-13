@@ -33,7 +33,7 @@ describe('render halaman', () => {
   it('login menampilkan sapaan dan peringatan konfigurasi', () => {
     const html = wrap(<Login />)
     expect(html).toContain('Selamat Datang, Petualang!')
-    expect(html).toContain('belum terhubung ke server')
+    expect(html).toContain('Main sebagai Tamu')
   })
   it('laboratorium dan 404', () => {
     expect(wrap(<Laboratory />)).toContain('Laboratorium Persegi')

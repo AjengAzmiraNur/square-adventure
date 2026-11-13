@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import { LogOut, User } from 'lucide-react'
+import { LogOut, Trash2, User } from 'lucide-react'
+import { resetGuest } from '../lib/guest/engine'
 import { useAuth } from '../context/AuthContext'
 import { useProgress } from '../context/ProgressContext'
 import { KubiFace } from '../components/Kubi'
@@ -18,8 +19,12 @@ export default function Profile() {
 
   const rows = [
     ['Nama siswa', profile.full_name],
-    ['Kode siswa', profile.student_code],
-    ['Kelas', profile.class_name || '-'],
+    ...(profile.guest
+      ? [['Jenis akun', 'Mode Tamu — progres tersimpan di perangkat ini dan tidak terlihat guru']]
+      : [
+          ['Kode siswa', profile.student_code],
+          ['Kelas', profile.class_name || '-'],
+        ]),
     ['Total XP', stats.total_xp],
     ['Level', `${info.level} — ${info.name}`],
     ['Misi selesai', `${stats.lessons_completed} dari 4`],
@@ -27,6 +32,13 @@ export default function Profile() {
     ['Nilai latihan terbaik', `Beginner: ${fmt(bestQuiz('training-beginner'))} · Intermediate: ${fmt(bestQuiz('training-intermediate'))} · Expert: ${fmt(bestQuiz('training-expert'))}`],
     ['Nilai evaluasi terbaik', fmt(bestQuiz('final-challenge'))],
   ]
+
+  const eraseGuest = async () => {
+    if (!window.confirm('Hapus semua progres tamu di perangkat ini? Tindakan ini tidak bisa dibatalkan.')) return
+    resetGuest()
+    await logout()
+    navigate('/masuk', { replace: true })
+  }
 
   const doLogout = async () => {
     await logout()
@@ -42,7 +54,7 @@ export default function Profile() {
           <div>
             <p className="font-display text-2xl font-bold text-navy">{profile.full_name}</p>
             <p className="text-slate-600">
-              {profile.role === 'teacher' ? 'Guru' : 'Siswa'} · {profile.student_code}
+              {profile.guest ? 'Mode Tamu' : `${profile.role === 'teacher' ? 'Guru' : 'Siswa'} · ${profile.student_code}`}
             </p>
           </div>
         </div>
@@ -66,8 +78,13 @@ export default function Profile() {
           </div>
         </dl>
         <button type="button" className="btn mt-4 border-2 border-red-200 bg-red-50 text-red-700 hover:bg-red-100" onClick={doLogout}>
-          <LogOut size={18} /> Keluar dari akun
+          <LogOut size={18} /> {profile.guest ? 'Keluar (progres tetap tersimpan)' : 'Keluar dari akun'}
         </button>
+        {profile.guest && (
+          <button type="button" className="btn ml-0 mt-3 border-2 border-slate-200 bg-white text-slate-600 hover:text-red-700 sm:ml-3" onClick={eraseGuest}>
+            <Trash2 size={18} /> Hapus data tamu
+          </button>
+        )}
       </section>
     </div>
   )

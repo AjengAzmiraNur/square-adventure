@@ -8,7 +8,21 @@
 | 📱 APK Android | https://github.com/AjengAzmiraNur/square-adventure/releases/latest |
 | 💻 Kode sumber | https://github.com/AjengAzmiraNur/square-adventure |
 
-Web aplikasi diperbarui otomatis oleh GitHub Actions setiap ada commit ke `main` (lihat `.github/workflows/deploy-pages.yml`). Agar bisa login dari web, backend FastAPI perlu berjalan di alamat **HTTPS** (mis. Render.com memakai `render.yaml` di repo ini), lalu alamatnya diisi di *Pengaturan Server* pada halaman masuk. Lihat bagian [Deploy backend](#7-deploy-backend-https-rendercom).
+### Dua cara memakai
+
+| | **Mode Tamu** (langsung pakai) | **Akun siswa** (login kode) |
+|---|---|---|
+| Yang dibutuhkan | Cukup ketik nama | Supabase + backend FastAPI |
+| Fitur belajar, lab, latihan, 5 game, evaluasi, XP & lencana | ✅ | ✅ |
+| Progres tersimpan | Di perangkat/browser itu saja | Di database sekolah, lintas perangkat |
+| Terlihat guru (menu Data Siswa) | ❌ | ✅ |
+| Penilaian anti-curang di server | ❌ (dinilai di browser) | ✅ |
+
+Buka link web → **Main sebagai Tamu** → ketik nama → mulai. Tidak perlu memasukkan link Supabase.
+
+Untuk Akun siswa, backend FastAPI perlu berjalan di alamat **HTTPS** (mis. Render.com dengan `render.yaml`), lalu alamatnya diisi di *Pengaturan Server* pada halaman masuk. Lihat [Deploy backend](#7-deploy-backend-https-rendercom). Web aplikasi diperbarui otomatis oleh GitHub Actions setiap ada commit ke `main`.
+
+> Bank soal Mode Tamu (`frontend/src/content/generated/content.json`) diekspor dari `backend/app/content` dengan `python -m scripts.export_content`; test backend memastikan keduanya selalu sama.
 
 SQUARE ADVENTURE adalah aplikasi pembelajaran matematika berbasis permainan untuk siswa SMP dengan materi **Pola Bilangan Persegi**. Siswa berperan sebagai petualang yang menjelajahi empat wilayah — Lembah Kotak, Hutan Pola, Gua Rumus, dan Puncak Tantangan — lalu menaklukkan Kastel Persegi (evaluasi akhir), ditemani karakter pemandu **Kubi**.
 

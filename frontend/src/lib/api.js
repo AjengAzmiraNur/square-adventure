@@ -1,5 +1,7 @@
 import { supabase } from './supabase'
 import { config } from './config'
+import { isGuestMode } from './mode'
+import { guestApi } from './guest/engine'
 
 export const API_URL = config.apiUrl
 
@@ -12,6 +14,14 @@ export class ApiError extends Error {
 
 /** Panggil backend FastAPI dengan token sesi Supabase siswa yang sedang login. */
 export async function api(path, { method = 'POST', body, auth = true } = {}) {
+  if (auth && isGuestMode()) {
+    // Mode Tamu: logika yang sama dijalankan di browser, tanpa server.
+    try {
+      return await guestApi(path, { method, body })
+    } catch (e) {
+      throw new ApiError(e.message || 'Terjadi kesalahan.', e.status || 400)
+    }
+  }
   const headers = { 'Content-Type': 'application/json' }
   if (auth && supabase) {
     const { data } = await supabase.auth.getSession()

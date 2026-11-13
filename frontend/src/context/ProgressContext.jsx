@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { supabase } from '../lib/supabase'
+import { guestSnapshot } from '../lib/guest/engine'
 import { useAuth } from './AuthContext'
 
 const ProgressContext = createContext(null)
@@ -17,8 +18,32 @@ const EMPTY = {
   gameAttempts: [],
 }
 
+/** Mengambil data milik siswa dari Supabase (RLS membatasi ke baris miliknya). */
+async function loadFromSupabase(uid) {
+  const results = await Promise.all([
+    supabase.from('user_stats').select('*').eq('user_id', uid).maybeSingle(),
+    supabase.from('lessons').select('*').order('level'),
+    supabase.from('lesson_progress').select('*').eq('user_id', uid),
+    supabase.from('achievements').select('*').order('sort_order'),
+    supabase.from('user_achievements').select('*').eq('user_id', uid),
+    supabase.from('activity_logs').select('*').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
+    supabase.from('quizzes').select('id, slug, kind, title, difficulty'),
+    supabase
+      .from('quiz_attempts')
+      .select('id, quiz_id, kind, status, score, total, score_pct, stars, xp_awarded, started_at, submitted_at')
+      .eq('user_id', uid)
+      .eq('status', 'completed')
+      .order('submitted_at', { ascending: false }),
+    supabase.from('games').select('*'),
+    supabase.from('game_attempts').select('*').eq('user_id', uid).order('created_at', { ascending: false }),
+  ])
+  if (results.some((r) => r.error)) return null
+  return results.map((r) => r.data)
+}
+
 /**
- * Memuat data milik siswa yang sedang login langsung dari Supabase.
+ * Memuat data milik siswa yang sedang login: dari Supabase (akun) atau dari
+ * penyimpanan perangkat (Mode Tamu).
  * RLS memastikan setiap query hanya mengembalikan baris milik siswa ini.
  */
 export function ProgressProvider({ children }) {
@@ -31,32 +56,19 @@ export function ProgressProvider({ children }) {
   const refresh = useCallback(async () => {
     if (!session) return
     setError('')
-    const uid = session.user.id
-    const results = await Promise.all([
-      supabase.from('user_stats').select('*').eq('user_id', uid).maybeSingle(),
-      supabase.from('lessons').select('*').order('level'),
-      supabase.from('lesson_progress').select('*').eq('user_id', uid),
-      supabase.from('achievements').select('*').order('sort_order'),
-      supabase.from('user_achievements').select('*').eq('user_id', uid),
-      supabase.from('activity_logs').select('*').eq('user_id', uid).order('created_at', { ascending: false }).limit(200),
-      supabase.from('quizzes').select('id, slug, kind, title, difficulty'),
-      supabase
-        .from('quiz_attempts')
-        .select('id, quiz_id, kind, status, score, total, score_pct, stars, xp_awarded, started_at, submitted_at')
-        .eq('user_id', uid)
-        .eq('status', 'completed')
-        .order('submitted_at', { ascending: false }),
-      supabase.from('games').select('*'),
-      supabase.from('game_attempts').select('*').eq('user_id', uid).order('created_at', { ascending: false }),
-    ])
-    const failed = results.find((r) => r.error)
-    if (failed) {
-      setError('Gagal memuat data petualanganmu. Periksa koneksi lalu coba lagi.')
-      setLoading(false)
-      return
+    let raw
+    if (session.guest) {
+      const g = guestSnapshot()
+      raw = [g.stats, g.lessons, g.progress, g.achievements, g.earned, g.activities, g.quizzes, g.quizAttempts, g.games, g.gameAttempts]
+    } else {
+      raw = await loadFromSupabase(session.user.id)
+      if (!raw) {
+        setError('Gagal memuat data petualanganmu. Periksa koneksi lalu coba lagi.')
+        setLoading(false)
+        return
+      }
     }
-    const [stats, lessons, progress, achievements, earned, activities, quizzes, quizAttempts, games, gameAttempts] =
-      results.map((r) => r.data)
+    const [stats, lessons, progress, achievements, earned, activities, quizzes, quizAttempts, games, gameAttempts] = raw
     const lessonById = Object.fromEntries(lessons.map((l) => [l.id, l]))
     setData({
       stats: stats || { total_xp: 0, level: 1, lessons_completed: 0, games_played: 0, quizzes_completed: 0, stars: 0 },
@@ -81,7 +93,6 @@ export function ProgressProvider({ children }) {
       setData(EMPTY)
     }
   }, [session, refresh])
-
   const helpers = useMemo(() => {
     const completedLevels = new Set(
       data.lessons.filter((l) => data.progress[l.slug]?.status === 'completed').map((l) => l.level),

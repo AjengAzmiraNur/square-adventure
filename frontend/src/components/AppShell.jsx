@@ -51,7 +51,7 @@ export default function AppShell() {
           <div className="flex items-center gap-2">
             <span className="hidden text-right text-sm leading-tight text-white sm:block">
               <span className="block font-bold">{profile?.full_name}</span>
-              <span className="text-white/60">{profile?.student_code}</span>
+              <span className="text-white/60">{profile?.guest ? 'Mode Tamu' : profile?.student_code}</span>
             </span>
             <button onClick={() => setOpen((v) => !v)} className="rounded-xl border-2 border-white/20 p-2 text-white hover:bg-white/10" aria-expanded={open} aria-label="Menu lainnya">
               {open ? <X size={22} /> : <Menu size={22} />}
