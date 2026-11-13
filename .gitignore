@@ -1,0 +1,23 @@
+# Rahasia
+.env
+**/.env
+
+# Python
+backend/.venv/
+__pycache__/
+.pytest_cache/
+
+# Node / build
+frontend/node_modules/
+frontend/dist/
+
+# Android (build & path lokal)
+frontend/android/app/build/
+frontend/android/build/
+frontend/android/.gradle/
+frontend/android/local.properties
+frontend/android/app/src/main/assets/public/
+frontend/android/capacitor-cordova-android-plugins/build/
+
+# APK dibagikan lewat GitHub Releases
+*.apk

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SQUARE ADVENTURE</string>
+    <string name="title_activity_main">SQUARE ADVENTURE</string>
+    <string name="package_name">id.squareadventure.app</string>
+    <string name="custom_url_scheme">id.squareadventure.app</string>
+</resources>

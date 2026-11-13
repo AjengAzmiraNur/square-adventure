@@ -1,0 +1,12 @@
+{
+  "appId": "id.squareadventure.app",
+  "appName": "SQUARE ADVENTURE",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "backgroundColor": "#172554"
+  }
+}

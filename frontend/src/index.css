@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-navy font-sans text-ink antialiased;
+    min-height: 100dvh;
+  }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  :focus-visible { outline: 3px solid #FACC15; outline-offset: 2px; }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='number'] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  /* Latar dunia persegi: grid halus di atas navy */
+  .world-bg {
+    background-color: #172554;
+    background-image:
+      linear-gradient(rgba(96, 165, 250, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-display text-base font-semibold
+      transition active:translate-y-[2px] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-royal text-white shadow-block hover:bg-blue-500; }
+  .btn-sun { @apply btn bg-sun text-navy shadow-block hover:bg-yellow-300; }
+  .btn-mint { @apply btn bg-mint text-navy shadow-block hover:bg-emerald-200; }
+  .btn-ghost { @apply btn border-2 border-white/30 text-white hover:bg-white/10; }
+  .btn-light { @apply btn border-2 border-slate-200 bg-white text-ink hover:border-royal hover:text-royal; }
+  .btn-sm { @apply px-3 py-2 text-sm; }
+
+  .panel { @apply rounded-2xl bg-snow p-5 text-ink shadow-soft sm:p-6; }
+  .panel-dark { @apply rounded-2xl border border-white/10 bg-white/5 p-5 text-white backdrop-blur sm:p-6; }
+
+  .chip { @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold; }
+
+  .input {
+    @apply w-full rounded-xl border-2 border-slate-300 bg-white px-4 py-3 text-lg font-bold text-ink
+      placeholder:font-normal placeholder:text-slate-400 focus:border-royal focus:outline-none focus:ring-4 focus:ring-sky/30;
+  }
+
+  .label-eyebrow { @apply text-xs font-extrabold uppercase tracking-[0.18em]; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
